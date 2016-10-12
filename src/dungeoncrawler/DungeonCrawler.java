@@ -5,7 +5,9 @@
  */
 package dungeoncrawler;
 
-import byui.cit260.DungeonCrawler.model.knight;
+import byui.cit260.DungeonCrawler.model.Player;
+
+
 
 /**
  *
@@ -16,15 +18,18 @@ public class DungeonCrawler {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-   
-            knight playerOne = new knight();
-            
+    public static void main(String[] args){
+        Player playerOne = new Player();
+        
+        playerOne.setName("Fred Flinstone");
+        playerOne.setBestScore(7.00);
+        
             playerOne.setName("Black Knight");
             playerOne.setStats(4);
             
-            String playerInfo = playerOne.toString();
-            System.out.println(playerInfo);
+        String playerInfo = playerOne.toString();
+        System.out.println(playerInfo);
+    
         }
     }
     

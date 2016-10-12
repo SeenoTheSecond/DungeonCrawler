@@ -12,16 +12,15 @@ import java.util.Objects;
  *
  * @author Jeff
  */
-public class knight implements Serializable{
+public class Player implements Serializable{
     
-    // class instance variables
     private String name;
-    private double stats;
+    private double bestScore;
 
-    public knight() {
+    public Player() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
     public String getName() {
         return name;
     }
@@ -30,19 +29,24 @@ public class knight implements Serializable{
         this.name = name;
     }
 
-    public double getStats() {
-        return stats;
+    public double getBestScore() {
+        return bestScore;
     }
 
-    public void setStats(Double stats) {
-        this.stats = stats;
+    public void setBestScore(double bestScore) {
+        this.bestScore = bestScore;
+    }
+
+    public Player(String name, double bestScore) {
+        this.name = name;
+        this.bestScore = bestScore;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
+        int hash = 5;
         hash = 89 * hash + Objects.hashCode(this.name);
-        hash = 89 * hash + Objects.hashCode(this.stats);
+        hash = 89 * hash + (int) (Double.doubleToLongBits(this.bestScore) ^ (Double.doubleToLongBits(this.bestScore) >>> 32));
         return hash;
     }
 
@@ -57,11 +61,12 @@ public class knight implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final knight other = (knight) obj;
-        if (!Objects.equals(this.name, other.name)) {
+        final Player other = (Player) obj;
+        if (Double.doubleToLongBits(this.bestScore) != Double.doubleToLongBits(other.bestScore)) {
             return false;
         }
-        if (!Objects.equals(this.stats, other.stats)) {
+        if (Objects.equals(this.name, other.name)) {
+        } else {
             return false;
         }
         return true;
@@ -69,16 +74,16 @@ public class knight implements Serializable{
 
     @Override
     public String toString() {
-        return "knight{" + "name=" + name + ", stats=" + stats + '}';
-    }
-
-    public void setStats(int i, int i0, int i1, int i2, int i3, int i4, int i5) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "Player{" + "name=" + name + ", bestScore=" + bestScore + '}';
     }
 
     public void setStats(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   
     }
     
     
+    
 }
+        
+    
