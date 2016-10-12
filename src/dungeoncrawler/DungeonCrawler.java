@@ -23,10 +23,7 @@ public class DungeonCrawler {
         
         playerOne.setName("Fred Flinstone");
         playerOne.setBestScore(7.00);
-        
-            playerOne.setName("Black Knight");
-            playerOne.setStats(4);
-            
+
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
     
